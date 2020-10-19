@@ -29,7 +29,7 @@ public class TaskController {
     public TaskDto updateTask(TaskDto taskDto){
         return new TaskDto(1L,"edited test title","test content");
     }
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, value = "createTask")
     public void createTask(TaskDto taskDto){
 
     }
