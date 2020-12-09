@@ -31,6 +31,11 @@ public class SimpleEmailService {
     private SimpleMailMessage createMailMessage(final Mail mail) {
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        if(mail.getToCc().isEmpty()){
+            LOGGER.info("No Carbon copy set");
+        }{
+            simpleMailMessage.setCc(mail.getToCc());
+        }
         simpleMailMessage.setTo(mail.getMailTo());
         simpleMailMessage.setSubject(mail.getSubject());
         simpleMailMessage.setText(mail.getMessage());
