@@ -33,7 +33,7 @@ public class SimpleEmailService {
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         if(mail.getToCc().isEmpty()){
             LOGGER.info("No Carbon copy set");
-        }{
+        } else {
             simpleMailMessage.setCc(mail.getToCc());
         }
         simpleMailMessage.setTo(mail.getMailTo());
