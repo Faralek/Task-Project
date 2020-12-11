@@ -32,12 +32,10 @@ public class MapperTestSuite {
         List<TaskDto> tasksDto = new ArrayList<>();
 
         //When
-        tasksDto.add(taskDto);
-        tasksDto.add(taskDto1);
-
         tasks.add(task);
         tasks.add(task1);
 
+        tasksDto = taskMapper.mapToTaskListDto(tasks);
         //Then
 
         assertThat(taskDto).isEqualToComparingFieldByField(taskMapper.mapToTask(taskDto));
