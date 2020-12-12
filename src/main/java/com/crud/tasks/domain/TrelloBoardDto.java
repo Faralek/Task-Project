@@ -10,24 +10,16 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TrelloBoardDto {
-
-    @JsonProperty("name")
-    private String name;
 
     @JsonProperty("id")
     private String id;
 
+    @JsonProperty("name")
+    private String name;
+
     @JsonProperty("lists")
     private List<TrelloListDto> lists;
 
-
-    @Override
-    public String toString() {
-        return "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                '}';
-    }
 }

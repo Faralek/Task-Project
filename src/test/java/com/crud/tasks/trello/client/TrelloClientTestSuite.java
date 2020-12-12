@@ -21,7 +21,7 @@ import java.util.List;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TrelloClientTest {
+public class TrelloClientTestSuite {
 
     @InjectMocks
     TrelloClient trelloClient;
@@ -44,7 +44,7 @@ public class TrelloClientTest {
         //Given
 
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
-        trelloBoards[0] = new TrelloBoardDto("test_board", "test_id", new ArrayList<>());
+        trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());
 
         URI url = new URI("https://test.com/members/testUsername/boards?key=test&token=test&fields=name,id&lists=all");
 
