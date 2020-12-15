@@ -1,0 +1,2 @@
+<span th:text="${two}"> + </span>>
+<span th:text="${two}"> = </span>>
