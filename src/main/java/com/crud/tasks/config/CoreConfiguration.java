@@ -23,19 +23,4 @@ public class CoreConfiguration implements WebMvcConfigurer {
         return new RestTemplate();
     }
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.crud.tasks.controller")).paths(PathSelectors.any()).build();
-    }
-
-
-    @Override
-    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        // Required by Swagger UI configuration
-        registry.addResourceHandler("/lib/**").addResourceLocations("/lib/").setCachePeriod(0);
-        registry.addResourceHandler("/images/**").addResourceLocations("/images/").setCachePeriod(0);
-        registry.addResourceHandler("/css/**").addResourceLocations("/css/").setCachePeriod(0);
-        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-    }
 }
