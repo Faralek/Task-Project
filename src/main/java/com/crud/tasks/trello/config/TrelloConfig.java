@@ -2,6 +2,7 @@ package com.crud.tasks.trello.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.stereotype.Component;
 
 @Getter
