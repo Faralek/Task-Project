@@ -17,7 +17,7 @@ public class TrelloCardDto {
     private String description;
     @JsonProperty("pos")
     private String pos;
-    @JsonProperty("idList")
-    private String idList;
+    @JsonProperty("listId")
+    private String listId;
 
 }

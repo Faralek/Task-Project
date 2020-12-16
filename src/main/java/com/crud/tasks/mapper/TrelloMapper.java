@@ -34,10 +34,10 @@ public class TrelloMapper {
     }
 
     public TrelloCard mapToCard(final TrelloCardDto trelloCardDto){
-        return new TrelloCard(trelloCardDto.getName(), trelloCardDto.getDescription(),trelloCardDto.getPos(),trelloCardDto.getIdList());
+        return new TrelloCard(trelloCardDto.getName(), trelloCardDto.getDescription(),trelloCardDto.getPos(),trelloCardDto.getListId());
     }
 
     public TrelloCardDto mapToCardDto(final TrelloCard trelloCard){
-        return new TrelloCardDto(trelloCard.getName(), trelloCard.getDescription(),trelloCard.getPos(),trelloCard.getIdList());
+        return new TrelloCardDto(trelloCard.getName(), trelloCard.getDescription(),trelloCard.getPos(),trelloCard.getListId());
     }
 }
