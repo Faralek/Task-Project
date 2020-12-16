@@ -3,8 +3,11 @@ package com.crud.tasks.sheduler;
 import com.crud.tasks.config.AdminConfig;
 import com.crud.tasks.domain.Mail;
 import com.crud.tasks.repository.TaskRepository;
+import com.crud.tasks.service.MailCreatorService;
 import com.crud.tasks.service.SimpleEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -24,15 +27,16 @@ public class EmailScheduler {
     public void sendInformationEmail() {
         long size = taskRepository.count();
 
-        String message = " tasks";
+        String messageTask = " tasks";
         if(size==1){
-            message = " task";
+            messageTask = " task";
         }
 
-        simpleEmailService.send(new Mail(
+        simpleEmailService.sendDailyMessage(new Mail(
                 adminConfig.getAdminMail(),
                 "",
                 SUBJECT,
-                "Currently in your database u got" + size + message));
+                "Currently in your database u got" + size + messageTask));
     }
+
 }
