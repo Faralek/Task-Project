@@ -104,4 +104,6 @@ public class TrelloClientTestSuite {
         Assert.assertEquals(new ArrayList<>(), fetchedTrelloBoards);
     }
 
+
+
 }
